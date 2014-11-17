@@ -3,70 +3,240 @@
 <head>
 <meta charset="UTF-8" />
 <title>昆明开发者2014年度技术分享聚会</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<style type="text/css">
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-text-size-adjust: none;
+}
+
+html,body{
+	margin: 0;
+	padding: 0;
+	border: none;
+	line-height: 1;
+	min-height:100%;
+	height: 100%;
+}
+body{
+	color: #555;
+	font-size: 14px;
+	font-family: "Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
+}
+
+ul,ol,figure,form,dl,dt,dd{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: 0;
+	vertical-align: middle;
+}
+
+a{
+	color: #0395d0;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+.row{
+	position: relative;
+}
+.container{
+	position: relative;
+	width: 80%;
+	min-width: 800px;
+	max-width: 1280px;
+	margin: auto;
+}
+.container-full{
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+header{
+	background: url(assets/img/header-bg.jpg) no-repeat center;
+	background-size: cover;
+	color: #fff;
+	text-shadow: 1px 2px 0 rgba(0,0,0,.2);
+}
+header .container{
+	padding: 10% 25% 10% 0;
+	background: url(assets/img/rocket.png) no-repeat right center;
+}
+header h1{
+	font-size: 4em;
+	font-weight: normal;
+}
+header h2{
+	margin: 0;
+	font-weight: normal;
+}
+header dl{
+	line-height: 1.8;
+}
+header dt{
+	float: left;
+}
+
+.topics{
+
+	box-shadow: 0 -5px 5px rgba(0,0,0,.1);
+}
+.topics .container{
+	padding: 5% 0;
+}
+.topics ul:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.topics li{
+	list-style: none;
+	float: left;
+	position: relative;
+	width: 48%;
+	background: #eee;
+	border-radius: 10px;
+	margin-bottom: 4%;
+	padding: 2% 2% 2% 12%;
+}
+.topics li:nth-child(odd){
+	margin-right: 4%;
+}
+.topics figure{
+	position: absolute;
+	left: 5%;
+	top: 50%;
+	width: 15%;
+	transform: translateY(-50%);
+}
+.topics figure img{
+	width: 100%;
+	border-radius: 100%;
+	border: 3px solid #fff;
+	box-shadow: 0 2px 3px rgba(0,0,0,.2);
+}
+.topics figcaption{
+	margin-top: .5em;
+	text-align: center;
+}
+.topics h3{
+	height: 2em;
+	margin: 0;
+	font-size: 1em;
+}
+.topics p{
+	margin: .5em 0;
+}
+
+footer{
+	background: #ccc;
+}
+footer .container{
+	padding: 5% 0;
+}
+footer h2{
+	margin-top: 0;
+	text-align: center;
+	font-size: 2em;
+}
+footer p{
+	width: 60%;
+	margin: auto;
+	line-height: 1.8;
+}
+footer .copyright{
+	margin-top: 5%;
+	text-align: center;
+}
+</style>
 </head>
 
 <body>
-<header>
-	<h1>昆明开发者2014年度技术分享聚会</h1>
-	<p>该聚会源于“昆明开花者”QQ群，旨在通过有关互联网技术和其他话题的交流分享，提升昆明本地较为落后的技术氛围，并借此机会建立一个长期交流分享的社区，以促进成员之间互助提高和资源共享。</p>
-	<dl>
-		<dt>发起人：</dt>
-		<dd>高纯，严俊羿，张锐等</dd>
-		<dt>时间：</dt>
-		<dd>2014年11月22日（周六） 下午2点</dd>
-		<dt>地点：</dt>
-		<dd>待定（周五前通知）</dd>
-	</dl>
+<header class="row">
+	<div class="container">
+		<h2>在昆明的开发者，你并不孤独，我们一起装逼一起飞！</h2>
+		<h1>2014年度技术分享聚会</h1>
+		<dl>
+			<dt>发起人：</dt>
+			<dd>高纯，严俊羿，张锐等</dd>
+			<dt>时间：</dt>
+			<dd>2014年11月22日（周六）下午2点</dd>
+			<dt>地点：</dt>
+			<dd>待定（周五前通知）</dd>
+			<dt>费用：</dt>
+			<dd>每人50RMB左右，包括场地和饮品</dd>
+		</dl>
+	</div>
 </header>
 
-<div>
-	<p>本次活动邀请到了社区的5位讲师，为大家带来精彩的内容：</p>
-	<article>
-		<h3>Odoo（OpenERP）Python环境的快速数据库应用开发</h3>
-		<dl>
-			<dt>讲师：</dt>
-			<dd>李维 <a href="mailto:liwei@sandwych.com">&lt;liwei@sandwych.com&gt;</a></dd>
-			<dt>工作信息：</dt>
-			<dd>昆明维智众源企业管理咨询有限公司</dd>
-		</dl>
-	</article>
-	<article>
-		<h3>再造轮子之JS模板引擎</h3>
-		<dl>
-			<dt>讲师：</dt>
-			<dd>严俊羿 <a href="mailto:mytharcher@gmail.com">&lt;mytharcher@gmail.com&gt;</a></dd>
-			<dt>工作信息：</dt>
-			<dd>自由职业者</dd>
-		</dl>
-	</article>
-	<article>
-		<h3>金融与比特币</h3>
-		<dl>
-			<dt>讲师：</dt>
-			<dd>王楚安 <a href="mailto:we2code@gmail.com">&lt;we2code@gmail.com&gt;</a></dd>
-			<dt>工作信息：</dt>
-			<dd>昆明维智众源企业管理咨询有限公司</dd>
-		</dl>
-	</article>
-	<article>
-		<h3>15分钟内写出realtime应用——Meteor介绍</h3>
-		<dl>
-			<dt>讲师：</dt>
-			<dd>张锐 <a href="mailto:stamen0630@gmail.com">&lt;stamen0630@gmail.com&gt;</a></dd>
-			<dt>工作信息：</dt>
-			<dd>恒翌科技</dd>
-		</dl>
-	</article>
-	<article>
-		<h3>待定</h3>
-		<dl>
-			<dt>讲师：</dt>
-			<dd>高纯</dd>
-			<dt>工作信息：</dt>
-			<dd></dd>
-		</dl>
-	</article>
+<div class="row topics">
+	<div class="container">
+		<ul>
+			<li>
+				<figure>
+					<img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160"/>
+					<figcaption>李维</figcaption>
+				</figure>
+				<h3>Odoo(OpenERP)Python环境的快速数据库应用开发</h3>
+				<p><abbr title="昆明维智众源企业管理咨询有限公司">维智众源</abbr> 软件工程师</p>
+				<p><a href="mailto:liwei@sandwych.com">liwei@sandwych.com</a></p>
+			</li>
+			<li>
+				<figure>
+					<img src="http://en.gravatar.com/avatar/1cd8c12591616d8c22aaa624f8c07834?s=160"/>
+					<figcaption>严俊羿</figcaption>
+				</figure>
+				<h3>再造轮子之JS模板引擎</h3>
+				<p>自由职业者 软件工程师</p>
+				<p><a href="mailto:mytharcher@gmail.com">mytharcher@gmail.com</a></p>
+			</li>
+			<li>
+				<figure>
+					<img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160"/>
+					<figcaption>王楚安</figcaption>
+				</figure>
+				<h3>金融与比特币</h3>
+				<p>自由职业者 软件工程师</p>
+				<p><a href="mailto:we2code@gmail.com">we2code@gmail.com</a></p>
+				</dl>
+			</li>
+			<li>
+				<figure>
+					<img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160"/>
+					<figcaption>张锐</figcaption>
+				</figure>
+				<h3>15分钟写出realtime应用——Meteor介绍</h3>
+				<p><abbr title="云南恒翌科技有限公司">恒翌科技</abbr> 软件工程师</p>
+				<p><a href="mailto:we2code@gmail.com">we2code@gmail.com</a></p>
+			</li>
+			<li>
+				<figure>
+					<img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160"/>
+					<figcaption>高纯</figcaption>
+				</figure>
+				<h3>待定</h3>
+				<p>xxxx 软件工程师</p>
+				<p><a href="mailto:">email</a></p>
+			</li>
+		</ul>
+	</div>
 </div>
+
+<footer class="row">
+	<div class="container">
+		<h2>分享·交流·共创</h2>
+		<p>该聚会源于“昆明开花者”群，旨在通过有关互联网技术和其他话题的交流分享，提升昆明本地较为落后的技术氛围，并借此机会建立一个长期交流分享的社区，以促进成员之间互助提高和资源共享。</p>
+		<p class="copyright">&copy; 2014</p>
+	</div>
+</footer>
 
 </body>
 </html>
