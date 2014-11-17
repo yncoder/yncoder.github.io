@@ -54,10 +54,10 @@ a:hover{
 	max-width: 1280px;
 	margin: auto;
 }
-.container-full{
-	width: 100%;
-	min-width: 100%;
-	max-width: 100%;
+.container:after{
+	content: "";
+	display: block;
+	clear: both;
 }
 
 header{
@@ -79,10 +79,27 @@ header h2{
 	font-weight: normal;
 }
 header dl{
+	display: inline-block;
+	width: 45%;
 	line-height: 1.8;
 }
 header dt{
 	float: left;
+}
+header form{
+}
+header form a{
+	display: inline-block;
+	padding: .5em 2em;
+	background: #fff;
+	border-radius: 5px;
+	font-size: 2em;
+	font-weight: bold;
+	vertical-align: bottom;
+	text-shadow: none;
+}
+header form a:hover{
+	text-decoration: none;
 }
 
 .topics{
@@ -164,16 +181,19 @@ footer .copyright{
 	<div class="container">
 		<h2>在昆明的开发者，你并不孤独，我们一起装逼一起飞！</h2>
 		<h1>2014年度技术分享聚会</h1>
-		<dl>
-			<dt>发起人：</dt>
-			<dd>高纯，严俊羿，张锐等</dd>
-			<dt>时间：</dt>
-			<dd>2014年11月22日（周六）下午2点</dd>
-			<dt>地点：</dt>
-			<dd>待定（周五前通知）</dd>
-			<dt>费用：</dt>
-			<dd>每人50RMB左右，包括场地和饮品</dd>
-		</dl>
+		<form>
+			<dl>
+				<dt>发起人：</dt>
+				<dd>高纯，严俊羿，张锐等</dd>
+				<dt>时间：</dt>
+				<dd>2014年11月22日（周六）下午2点</dd>
+				<dt>地点：</dt>
+				<dd>待定（周五前通知）</dd>
+				<dt>费用：</dt>
+				<dd>AA 人均 50 RMB 左右，包括场地和饮品</dd>
+			</dl>
+			<a href="mailto:stamen0630@gmail.com?Subject=[昆明开发者技术分享聚会]报名&amp;body=我是&lt;您的真实姓名&gt;，我已经了解了2014年11月22日下午聚会的大体内容，我要报名参与。">报名参与</a>
+		</form>
 	</div>
 </header>
 
@@ -224,7 +244,7 @@ footer .copyright{
 				</figure>
 				<h3>待定</h3>
 				<p>xxxx 软件工程师</p>
-				<p><a href="mailto:">email</a></p>
+				<p><a href="mailto:gc87@foxmail.com">gc87@foxmail.com</a></p>
 			</li>
 		</ul>
 	</div>
