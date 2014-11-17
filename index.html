@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <title>昆明开发者2014年度技术分享聚会</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" />
 <style type="text/css">
 *{
 	-webkit-box-sizing: border-box;
@@ -63,6 +64,7 @@ a:hover{
 header{
 	background: url(assets/img/header-bg.jpg) no-repeat center;
 	background-size: cover;
+	box-shadow: inset 0 -5px 5px rgba(0,0,0,.1);
 	color: #fff;
 	text-shadow: 1px 2px 0 rgba(0,0,0,.2);
 }
@@ -97,24 +99,120 @@ header form a{
 	font-weight: bold;
 	vertical-align: bottom;
 	text-shadow: none;
+	color: #f59340;
 }
 header form a:hover{
 	text-decoration: none;
 }
 
-.topics{
-
-	box-shadow: 0 -5px 5px rgba(0,0,0,.1);
-}
-.topics .container{
+.flow .container{
 	padding: 5% 0;
 }
-.topics ul:after{
+.flow .timeline p,
+.flow .timeline h3{
+	margin: 0;
+	line-height: 40px;
+}
+
+.flow .timeline{
+	position: relative;
+	margin-left: 130px;
+	padding-left: 70px;
+}
+.flow .timeline:before{
+	content: "";
+	display: block;
+	position: absolute;
+	left: -4px;
+	height: 100%;
+	border-left: 4px solid #eee;
+}
+.flow .timeline ul.item-list{
+	position: relative;
+	list-style: none;
+}
+.flow .timeline li.item{
+	position: relative;
+	margin: 20px 0;
+}
+.flow .timeline li.topic{
+	min-height: 80px;
+}
+.flow .timeline li.item .meta{
+	position: absolute;
+	left: -180px;
+	width: 180px;
+	overflow: visible;
+}
+.flow .timeline li.item .meta i.fa{
+	position: absolute;
+	left: 98px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 100%;
+	background: #0395d0;
+	color: #fff;
+	text-align: center;
+}
+.flow .timeline li.item .meta i.figure{
+	display: inline-block;
+	position: absolute;
+	left: 68px;
+	width: 80px;
+	height: 80px;
+	border: 2px solid #0395d0;
+	border-radius: 100%;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.flow .timeline li.item .meta i.figure img{
+	width: 100%;
+	padding: 2px;
+	border-radius: 100%;
+}
+.flow .timeline li.item p.date{
+	position: absolute;
+	left: 0;
+	line-height: 20px;
+}
+.flow .timeline li.topic p.date{
+	line-height: 80px;
+}
+.flow .timeline li.item .content{
+	position: relative;
+	z-index: 1;
+}
+.flow .timeline li.item h3{
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	margin-right: 10px;
+	font-weight: normal;
+}
+.flow .timeline li.topic h3{
+	line-height: 80px;
+}
+
+.flow h2,
+.speakers h2{
+	height: 2em;
+	line-height: 2em;
+	margin: 0 0 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid #0395d0;
+	font-size: 3em;
+	font-weight: normal;
+}
+
+.speakers .container{
+	padding-bottom: 5%;
+}
+.speakers ul:after{
 	content: "";
 	display: block;
 	clear: both;
 }
-.topics li{
+.speakers li{
 	list-style: none;
 	float: left;
 	position: relative;
@@ -124,32 +222,30 @@ header form a:hover{
 	margin-bottom: 4%;
 	padding: 2% 2% 2% 12%;
 }
-.topics li:nth-child(odd){
+.speakers li:nth-child(odd){
 	margin-right: 4%;
 }
-.topics figure{
+.speakers figure{
 	position: absolute;
 	left: 5%;
 	top: 50%;
 	width: 15%;
 	transform: translateY(-50%);
 }
-.topics figure img{
+.speakers figure img{
 	width: 100%;
 	border-radius: 100%;
 	border: 3px solid #fff;
 	box-shadow: 0 1px 3px rgba(0,0,0,.2);
 }
-.topics figcaption{
+.speakers figcaption{
 	margin-top: .5em;
 	text-align: center;
 }
-.topics h3{
-	height: 2em;
-	margin: 0;
-	font-size: 1em;
+.speakers h3{
+	margin: 0 0 .8em 0;
 }
-.topics p{
+.speakers p{
 	margin: .5em 0;
 }
 
@@ -157,7 +253,7 @@ footer{
 	background: #ccc;
 }
 footer .container{
-	padding: 5% 0;
+	padding: 5% 0 1% 0;
 }
 footer h2{
 	margin-top: 0;
@@ -197,33 +293,149 @@ footer .copyright{
 	</div>
 </header>
 
-<div class="row topics">
+<div class="row flow">
 	<div class="container">
+		<h2>议程安排</h2>
+		<div class="timeline">
+			<ul class="item-list">
+				<li class="item">
+					<div class="meta">
+						<i class="fa fa-check"></i>
+						<p class="date">13:30</p>
+					</div>
+					<div class="content">
+						<h3>签到，互相介绍</h3>
+					</div>
+				</li>
+				<li class="item topic">
+					<div class="meta">
+						<i class="figure"><img src="http://mbed.qiniudn.com/yncoder.herokuapp.com/img/liwei.jpg" /></i>
+						<p class="date">14:00</p>
+					</div>
+					<div class="content">
+						<h3><strong>李维</strong>：Odoo (OpenERP) Python 环境的快速数据库应用开发</h3>
+					</div>
+				</li>
+				<li class="item">
+					<div class="meta">
+						<i class="fa fa-clock-o"></i>
+						<p class="date">14:30</p>
+					</div>
+					<div class="content">
+						<h3>交流讨论</h3>
+					</div>
+				</li>
+				<li class="item topic">
+					<div class="meta">
+						<i class="figure"><img src="http://en.gravatar.com/avatar/1cd8c12591616d8c22aaa624f8c07834?s=160" /></i>
+						<p class="date">14:40</p>
+					</div>
+					<div class="content">
+						<h3><strong>严俊羿</strong>：再造轮子之 JS 模板引擎</h3>
+					</div>
+				</li>
+				<li class="item">
+					<div class="meta">
+						<i class="fa fa-clock-o"></i>
+						<p class="date">15:10</p>
+					</div>
+					<div class="content">
+						<h3>交流讨论</h3>
+					</div>
+				</li>
+				<li class="item topic">
+					<div class="meta">
+						<i class="figure"><img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160" /></i>
+						<p class="date">15:20</p>
+					</div>
+					<div class="content">
+						<h3><strong>王楚安</strong>：金融与比特币</h3>
+					</div>
+				</li>
+				<li class="item">
+					<div class="meta">
+						<i class="fa fa-clock-o"></i>
+						<p class="date">15:50</p>
+					</div>
+					<div class="content">
+						<h3>交流讨论</h3>
+					</div>
+				</li>
+				<li class="item topic">
+					<div class="meta">
+						<i class="figure"><img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160" /></i>
+						<p class="date">16:00</p>
+					</div>
+					<div class="content">
+						<h3><strong>张锐</strong>：15分钟写出 realtime 应用——Meteor 介绍</h3>
+					</div>
+				</li>
+				<li class="item">
+					<div class="meta">
+						<i class="fa fa-clock-o"></i>
+						<p class="date">16:30</p>
+					</div>
+					<div class="content">
+						<h3>交流讨论</h3>
+					</div>
+				</li>
+				<li class="item topic">
+					<div class="meta">
+						<i class="figure"><img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160" /></i>
+						<p class="date">16:40</p>
+					</div>
+					<div class="content">
+						<h3><strong>高纯</strong>：待定</h3>
+					</div>
+				</li>
+				<li class="item">
+					<div class="meta">
+						<i class="fa fa-users"></i>
+						<p class="date">17:10</p>
+					</div>
+					<div class="content">
+						<h3>自由交流与换书环节</h3>
+					</div>
+				</li>
+				<li class="item">
+					<div class="meta">
+						<i class="fa fa-dot-circle-o"></i>
+						<p class="date">17:30</p>
+					</div>
+					<div class="content">
+						<h3>合影，结束</h3>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="row speakers">
+	<div class="container">
+		<h2>讲师信息</h2>
 		<ul>
 			<li>
 				<figure>
 					<img src="http://mbed.qiniudn.com/yncoder.herokuapp.com/img/liwei.jpg"/>
-					<figcaption>李维</figcaption>
 				</figure>
-				<h3>Odoo(OpenERP)Python环境的快速数据库应用开发</h3>
+				<h3>李维</h3>
 				<p><abbr title="昆明维智众源企业管理咨询有限公司">维智众源</abbr> 软件工程师</p>
 				<p><a href="mailto:liwei@sandwych.com">liwei@sandwych.com</a></p>
 			</li>
 			<li>
 				<figure>
 					<img src="http://en.gravatar.com/avatar/1cd8c12591616d8c22aaa624f8c07834?s=160"/>
-					<figcaption>严俊羿</figcaption>
 				</figure>
-				<h3>再造轮子之JS模板引擎</h3>
+				<h3>严俊羿</h3>
 				<p>自由职业者 软件工程师</p>
 				<p><a href="mailto:mytharcher@gmail.com">mytharcher@gmail.com</a></p>
 			</li>
 			<li>
 				<figure>
 					<img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160"/>
-					<figcaption>王楚安</figcaption>
 				</figure>
-				<h3>金融与比特币</h3>
+				<h3>王楚安</h3>
 				<p>自由职业者 软件工程师</p>
 				<p><a href="mailto:we2code@gmail.com">we2code@gmail.com</a></p>
 				</dl>
@@ -231,18 +443,16 @@ footer .copyright{
 			<li>
 				<figure>
 					<img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160"/>
-					<figcaption>张锐</figcaption>
 				</figure>
-				<h3>15分钟写出realtime应用——Meteor介绍</h3>
+				<h3>张锐</h3>
 				<p><abbr title="云南恒翌科技有限公司">恒翌科技</abbr> 软件工程师</p>
 				<p><a href="mailto:stamen0630@gmail.com">stamen0630@gmail.com</a></p>
 			</li>
 			<li>
 				<figure>
 					<img src="http://en.gravatar.com/avatar/3f28ab5de36c63192e702a06d1e0652e?s=160"/>
-					<figcaption>高纯</figcaption>
 				</figure>
-				<h3>待定</h3>
+				<h3>高纯</h3>
 				<p>xxxx 软件工程师</p>
 				<p><a href="mailto:gc87@foxmail.com">gc87@foxmail.com</a></p>
 			</li>
