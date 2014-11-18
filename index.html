@@ -88,9 +88,10 @@ header dl{
 header dt{
 	float: left;
 }
-header form{
-}
 header form a{
+	color: #fff;
+}
+header form a.apply{
 	display: inline-block;
 	padding: .5em 2em;
 	background: #fff;
@@ -101,7 +102,7 @@ header form a{
 	text-shadow: none;
 	color: #f59340;
 }
-header form a:hover{
+header form a.apply:hover{
 	text-decoration: none;
 }
 
@@ -194,7 +195,8 @@ header form a:hover{
 }
 
 .flow h2,
-.speakers h2{
+.speakers h2,
+#apply-dialog h2{
 	height: 2em;
 	line-height: 2em;
 	margin: 0 0 1em 0;
@@ -249,6 +251,10 @@ header form a:hover{
 	margin: .5em 0;
 }
 
+#apply-dialog .container{
+	padding-bottom: 5%;
+}
+
 footer{
 	background: #ccc;
 }
@@ -284,11 +290,13 @@ footer .copyright{
 				<dt>时间：</dt>
 				<dd>2014年11月22日（周六）下午2点</dd>
 				<dt>地点：</dt>
-				<dd>待定（周五前通知）</dd>
+				<dd>文林街府甬道卷耳咖啡馆（<a href="http://ditu.google.cn/maps?q=25.050946,102.700396&amp;hl=zh-CN&amp;sll=24.880095,102.832892&amp;sspn=0.751231,1.344452&amp;brcurrent=3,0x36d09a24e000385d:0xb7a6b97b5cd97804,0,0x36d083c31227d3cb:0xccb1f3a4984f0a36%3B5,0,0&amp;t=m&amp;z=16" target="_blank">查看地图</a>）</dd>
+				<dt>内容：</dt>
+				<dd>主题分享 + 书籍交换 + 自由交流</dd>
 				<dt>费用：</dt>
-				<dd>AA 人均 50 RMB 左右，包括场地和饮品</dd>
+				<dd>AA 人均 50 RMB 左右，包括场地和咖啡甜品</dd>
 			</dl>
-			<a href="mailto:stamen0630@gmail.com?Subject=[昆明开发者技术分享聚会]报名&amp;body=我是[您的真实姓名]，我已经了解了2014年11月22日下午聚会的大体内容，我要报名参与。">报名参与</a>
+			<a id="apply" class="apply" href="#apply-dialog">报名参与</a>
 		</form>
 	</div>
 </header>
@@ -394,7 +402,7 @@ footer .copyright{
 						<p class="date">17:10</p>
 					</div>
 					<div class="content">
-						<h3>自由交流与换书环节</h3>
+						<h3>自由交流与换书环节（<a href="http://book.douban.com/doulist/19820269/" target="_blank">书单链接</a>）</h3>
 					</div>
 				</li>
 				<li class="item">
@@ -457,6 +465,13 @@ footer .copyright{
 				<p><a href="mailto:gc87@foxmail.com">gc87@foxmail.com</a></p>
 			</li>
 		</ul>
+	</div>
+</div>
+
+<div id="apply-dialog" class="row">
+	<div class="container">
+		<h2>报名</h2>
+		<script src='https://www.jinshuju.net/f/Yrmtlt/embedded.js?banner=hide&amp;background=white&amp;height=545'></script>
 	</div>
 </div>
 
