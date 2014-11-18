@@ -196,7 +196,7 @@ header form a.apply:hover{
 
 .flow h2,
 .speakers h2,
-#apply-dialog h2{
+#apply h2{
 	height: 2em;
 	line-height: 2em;
 	margin: 0 0 1em 0;
@@ -251,8 +251,20 @@ header form a.apply:hover{
 	margin: .5em 0;
 }
 
-#apply-dialog .container{
-	padding-bottom: 5%;
+#apply .container{
+	padding: 1% 0 5% 0;
+}
+#apply h2{
+	float: left;
+	margin-right: 1em;
+}
+#apply h2+p{
+	margin-top: 1.5em;
+	line-height: 1.5em;
+	color: #999;
+}
+#apply h2+p b{
+	margin: 0 .2em;
 }
 
 footer{
@@ -296,7 +308,7 @@ footer .copyright{
 				<dt>费用：</dt>
 				<dd>AA 人均 50 RMB 左右，包括场地和咖啡甜品</dd>
 			</dl>
-			<a id="apply" class="apply" href="#apply-dialog">报名参与</a>
+			<a id="apply" class="apply" href="#apply">报名参与</a>
 		</form>
 	</div>
 </header>
@@ -468,9 +480,10 @@ footer .copyright{
 	</div>
 </div>
 
-<div id="apply-dialog" class="row">
+<div id="apply" class="row">
 	<div class="container">
 		<h2>报名</h2>
+		<p>填写下面的表单进行报名。提交成功后管理员会向您发送确认邮件，其中包含讲师<b>王楚安</b>的支付宝二维码，需要您提前支付费用进行报名确认。如不确定能按时到场，请不要进行支付。</p>
 		<script src='https://www.jinshuju.net/f/Yrmtlt/embedded.js?banner=hide&amp;background=white&amp;height=545'></script>
 	</div>
 </div>
