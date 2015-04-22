@@ -77,7 +77,7 @@
         background-color: #2196F3;
         color: #FFF;
         font-size: 3em;
-        padding: 0.4em 20px;
+        padding: 0.4em 40px;
         position: fixed;
         width: 100%;
         z-index: 4;
@@ -129,12 +129,12 @@
         #content h5,
         #content h6,
         #content p{margin:.8em 0;}
-        #content h1{font-size: 2.2em;}
-        #content h2{font-size: 2em;}
-        #content h3{font-size: 1.8em;}
-        #content h4{font-size: 1.6em;}
-        #content h5{font-size: 1.4em;}
-        #content h6{font-size: 1.2em;}
+        #content h1{font-size: 2.2em; line-height: 1.2em;}
+        #content h2{font-size: 2em; line-height: 1.2em;}
+        #content h3{font-size: 1.8em; line-height: 1.2em;}
+        #content h4{font-size: 1.6em; line-height: 1.2em;}
+        #content h5{font-size: 1.4em; line-height: 1.2em;}
+        #content h6{font-size: 1.2em; line-height: 1.2em;}
         #content figure{margin: 1em 0;}
         #content p img,
         #content figure img{max-width: 100%;}
@@ -155,6 +155,25 @@
         #content td{background:#fff;}
         #content table a{margin:0;}
         #content blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px solid #eee; padding-left:1em; font-size:90%;}
+        @media screen and (max-width: 1023px) {
+            .container {
+                position: relative;
+                width: 100%;
+                padding: 20px;
+            }
+            #content {
+                font-size: 17px;
+            }
+            .it-title {
+                font-size: 3em;
+                padding-left: 20px;
+                padding-right: 20px;
+                position: relative;
+            }
+            .side-bar{
+                display: none
+            }
+        }
         </style>
         <script src="../../assets/marked.min.js"></script>
     </head>
