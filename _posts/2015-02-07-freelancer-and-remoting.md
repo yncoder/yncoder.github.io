@@ -1,3 +1,17 @@
+---
+category: interview
+layout: interview
+title: Freelancer and Remoting
+status: done
+interviewee:
+  - name: 严俊羿
+    avatar: http://en.gravatar.com/avatar/1cd8c12591616d8c22aaa624f8c07834?s=160
+    description: 前端工程师，2013年以Freelancer身份全国旅行，14年初回到昆明开始正式的自由职业生涯，同时在做Remote工作。
+  - name: 王楚安
+    avatar: http://mbed.qiniudn.com/yncoder.github.io/img/wangchu-an.jpg
+    description: 6年资深Freelancer，曾经拥有自由职业的团队，最近脱离自由职业身份，开始上班。
+---
+
 感谢```Yanjunyi```, ```William```, ```风雪```, ```So9t!```, ```Bigzhu```等人支持第一次活动.
 
 我是重度拖延症患者,请见谅.
