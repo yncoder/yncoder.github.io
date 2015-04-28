@@ -15,7 +15,7 @@ html,body{
 	height: 100%;
 }
 body{
-	color: #555;
+	color: #333;
 	font-size: 14px;
 	font-family: "Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
 }
@@ -54,14 +54,32 @@ a:hover{
 
 
 
-article>h1:first-child{margin:0;}
+nav{
+	height: 60px;
+}
+nav ul{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px 0;
+}
+nav li{
+	list-style: none;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+	margin-left: 20px;
+}
+
+
 article h1,
 article h2,
 article h3,
 article h4,
 article h5,
 article h6,
-article p{margin:.8em 0;}
+article p{margin:1em 0;}
 article h1{font-size: 2.2em; line-height: 1.2em;}
 article h2{font-size: 2em; line-height: 1.2em;}
 article h3{font-size: 1.8em; line-height: 1.2em;}
@@ -70,7 +88,7 @@ article h5{font-size: 1.4em; line-height: 1.2em;}
 article h6{font-size: 1.2em; line-height: 1.2em;}
 article figure{margin: 1em 0;}
 article p img,
-article figure img{max-width: 100%;}
+article figure img{max-width: 100%; margin-bottom: .5em;}
 article figure.half img{max-width: 50%;}
 article figure.half img.margin{max-width: 46%; margin: 2%; box-shadow: 0 5px 15px rgba(0,0,0,.5);}
 article ul,
@@ -88,3 +106,10 @@ article th{background:#eee; text-align:left;}
 article td{background:#fff;}
 article table a{margin:0;}
 article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px solid #eee; padding-left:1em; font-size:90%;}
+
+@media (max-width: 640px) {
+	.container{
+		width: 90%;
+		max-width: 90%;
+	}
+}
