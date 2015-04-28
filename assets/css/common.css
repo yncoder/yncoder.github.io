@@ -37,9 +37,6 @@ a:hover{
 	text-decoration: underline;
 }
 
-.row{
-	position: relative;
-}
 .container{
 	position: relative;
 	width: 80%;
@@ -56,6 +53,18 @@ a:hover{
 
 nav{
 	height: 60px;
+}
+nav .logo{
+	display: block;
+	height: 60px;
+	text-decoration: none;
+	font: normal 2em/60px Consolas;
+	color: #000;
+}
+nav .logo img{
+	float: left;
+	height: 100%;
+	margin-right: .5em;
 }
 nav ul{
 	position: absolute;
@@ -109,6 +118,33 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 
 @media (max-width: 640px) {
 	.container{
+		width: 90%;
+		max-width: 90%;
+	}
+}
+
+
+
+article.container,
+article.container{
+	max-width: 640px;
+	font-size: 1.2em;
+	line-height: 1.8em;
+}
+.page-log article h1:first-child,
+.page-log article p.meta{
+	text-align: center;
+}
+.page-log article p.meta{
+	margin-bottom: 2em;
+	font-size: 90%;
+}
+
+@media (max-width: 640px) {
+	nav .logo *:not(img){
+		display: none;
+	}
+	.page-log article.container{
 		width: 90%;
 		max-width: 90%;
 	}

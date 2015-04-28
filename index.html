@@ -8,46 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <link rel="icon" href="/favicon.png" type="image/x-icon" />
 <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="/assets/css/common.css" />
 <style type="text/css">
-*{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-
-	-webkit-text-size-adjust: none;
-}
-
-html,body{
-	margin: 0;
-	padding: 0;
-	border: none;
-	line-height: 1;
-	min-height:100%;
-	height: 100%;
-}
-body{
-	color: #555;
-	font-size: 14px;
-	font-family: "Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
-}
-
-ul,ol,figure,form,dl,dt,dd{
-	margin: 0;
-	padding: 0;
-}
-img{
-	border: 0;
-	vertical-align: middle;
-}
-
-a{
-	color: #43a8dc;
-	text-decoration: none;
-}
-a:hover{
-	text-decoration: underline;
-}
-
 .holder{
 	min-height: 100%;
 	margin-bottom: -60px;
@@ -58,34 +20,8 @@ a:hover{
 	height: 60px;
 }
 
-.container{
-	position: relative;
-	width: 80%;
-	max-width: 980px;
-	margin: auto;
-}
-.container:after{
-	content: "";
-	display: block;
-	clear: both;
-}
-
-nav{
-	height: 60px;
-}
-nav ul{
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 20px 0;
-}
-nav li{
-	list-style: none;
-	display: inline-block;
-	height: 20px;
-	line-height: 20px;
-	vertical-align: middle;
-	margin-left: 20px;
+nav .logo{
+	display: none;
 }
 
 header{
@@ -143,12 +79,6 @@ footer .copyright{
 	}
 }
 
-@media (max-width: 1024px) {
-	.container{
-		width: 90%;
-	}
-}
-
 @media (max-width: 640px) {
 	header h1{
 		font-size: 2em;
@@ -168,12 +98,7 @@ footer .copyright{
 
 <div class="holder">
 
-<nav class="container">
-	<ul>
-		<li><a href="https://github.com/yncoder/yncoder.github.io/issues" target="_blank">社区讨论</a></li>
-		<li><iframe src="https://ghbtns.com/github-btn.html?user=yncoder&amp;repo=yncoder.github.io&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
-	</ul>
-</nav>
+{% include nav.html %}
 
 <header class="container">
 	<figure>

@@ -1,68 +1,9 @@
 ---
+layout: page
 ---
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8" />
-<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<link rel="icon" href="/favicon.png" type="image/x-icon" />
-<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" />
-<link rel="stylesheet" href="/assets/css/common.css" />
-<style type="text/css">
-nav .logo{
-	display: block;
-	height: 60px;
-	text-decoration: none;
-	font: normal 2em/60px Consolas;
-	color: #000;
-}
-nav .logo img{
-	float: left;
-	height: 100%;
-	margin-right: .5em;
-}
-article.container{
-	max-width: 640px;
-	font-size: 1.2em;
-	line-height: 1.8em;
-}
-article h1:first-child,
-article p.meta{
-	text-align: center;
-}
-article p.meta{
-	margin-bottom: 2em;
-	font-size: 90%;
-}
-
-@media (max-width: 640px) {
-	nav .logo *:not(img){
-		display: none;
-	}
-	article.container{
-		width: 90%;
-		max-width: 90%;
-	}
-}
-</style>
-</head>
-<body class="page-{{ page.category }}">
-
-<nav class="container">
-	<a href="/" class="logo"><img src="/assets/img/logo-160.png" /><strong>Yncoder</strong></a>
-	<ul>
-		<li><a href="https://github.com/yncoder/yncoder.github.io/issues" target="_blank">社区讨论</a></li>
-		<li><iframe src="https://ghbtns.com/github-btn.html?user=yncoder&amp;repo=yncoder.github.io&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
-	</ul>
-</nav>
 
 <article class="container">
 	<h1>{{ page.title }}</h1>
 	<p class="meta">By {{ page.author }} at {{ page.date | date: "%Y-%m-%d" }}</p>
 	{{ content }}
 </article>
-
-</body>
-</html>
