@@ -1,0 +1,21 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>{% if page.title %}{{ page.title }} - {% endif %}Yncoder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="icon" href="/favicon.png" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" />
+<link rel="stylesheet" href="/assets/css/common.css" />
+</head>
+<body class="page-{{ page.category }}">
+
+{% include nav.html %}
+
+{{ content }}
+
+</body>
+</html>
