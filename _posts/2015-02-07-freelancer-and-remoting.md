@@ -1,7 +1,7 @@
 ---
 category: interview
 layout: interview
-title: Freelancer and Remoting
+title: 自由职业者与远程工作那些事
 status: done
 interviewee:
   - name: 严俊羿
@@ -15,8 +15,6 @@ interviewee:
 感谢```Yanjunyi```, ```William```, ```风雪```, ```So9t!```, ```Bigzhu```等人支持第一次活动.
 
 我是重度拖延症患者,请见谅.
-
-# 昆明开发者访谈 - 自由职业者与远程工作那些事
 
 * **时间**：2015年2月7日（周六）下午2点
 * **地点**：北辰财富中心CD商务公寓16楼(<a href="http://j.map.baidu.com/n4cwm" target="blank">查看地图</a>)

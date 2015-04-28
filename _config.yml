@@ -1,3 +1,5 @@
 markdown: kramdown
 permalink: /:categories/:title.html
 exclude: []
+
+host: yncoder.github.io

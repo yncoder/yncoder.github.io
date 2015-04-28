@@ -1,0 +1,90 @@
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-text-size-adjust: none;
+}
+
+html,body{
+	margin: 0;
+	padding: 0;
+	border: none;
+	line-height: 1;
+	min-height:100%;
+	height: 100%;
+}
+body{
+	color: #555;
+	font-size: 14px;
+	font-family: "Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
+}
+
+ul,ol,figure,form,dl,dt,dd{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: 0;
+	vertical-align: middle;
+}
+
+a{
+	color: #0395d0;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+.row{
+	position: relative;
+}
+.container{
+	position: relative;
+	width: 80%;
+	max-width: 1280px;
+	margin: auto;
+}
+.container:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+
+article>h1:first-child{margin:0;}
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+article p{margin:.8em 0;}
+article h1{font-size: 2.2em; line-height: 1.2em;}
+article h2{font-size: 2em; line-height: 1.2em;}
+article h3{font-size: 1.8em; line-height: 1.2em;}
+article h4{font-size: 1.6em; line-height: 1.2em;}
+article h5{font-size: 1.4em; line-height: 1.2em;}
+article h6{font-size: 1.2em; line-height: 1.2em;}
+article figure{margin: 1em 0;}
+article p img,
+article figure img{max-width: 100%;}
+article figure.half img{max-width: 50%;}
+article figure.half img.margin{max-width: 46%; margin: 2%; box-shadow: 0 5px 15px rgba(0,0,0,.5);}
+article ul,
+article ol{padding-left:2em;}
+article dl{margin:.5em .8em;}
+article dl dd{margin-left:2em;}
+article dl dd>ul,
+article dl dd>ol{padding-left:1em;}
+article pre{width:100%; overflow-x:auto; line-height:1.2em; border-radius: 4px; background:#333;}
+article code{border-radius: 4px; font:normal 85%/1.2em "Inconsolata", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;}
+article :not(pre)>code{margin:auto 1px; padding:1px 2px; border: 1px solid #d7d7d7; background: #eee;}
+article table{border-collapse:collapse;}
+article th,article td{padding:0 10px; border:1px solid #ccc; font-size:85%;}
+article th{background:#eee; text-align:left;}
+article td{background:#fff;}
+article table a{margin:0;}
+article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px solid #eee; padding-left:1em; font-size:90%;}
