@@ -10,9 +10,10 @@ category: single
 * [简约设计の艺术](http://88250.b3log.org/) ([Solo][])
 * [一个博客](http://zhangrgk.ninja/) ([Ghost][])
 * [BigZhu的窝](http://bigzhu.org/) (自建)
-* [Liao Yifan's Strive](http://saintdan.github.io/) ([Jekyll][])
+* [Liao Yifan's Strive](http://saintdan.github.io/) ([Hexo][])
 * [Vanessa](http://vanessa.b3log.org/) ([Solo][])
 
 [Jekyll]: http://jekyllrb.com/
 [Ghost]: https://ghost.org/
+[Hexo]: http://hexo.io/
 [Solo]: https://github.com/b3log/b3log-solo
