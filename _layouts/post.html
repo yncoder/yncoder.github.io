@@ -7,3 +7,7 @@ layout: page
 	<p class="meta">By {{ page.author }} at {{ page.date | date: "%Y-%m-%d" }}</p>
 	{{ content }}
 </article>
+
+<aside class="container">
+{% include duoshuo-comment.html %}
+</aside>

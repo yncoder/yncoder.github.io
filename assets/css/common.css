@@ -126,8 +126,7 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 
 
 
-article.container,
-article.container{
+.page-log .container:not(nav){
 	max-width: 640px;
 	font-size: 1.2em;
 	line-height: 1.8em;
