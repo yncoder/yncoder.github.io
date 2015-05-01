@@ -144,6 +144,9 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 	nav .logo *:not(img){
 		display: none;
 	}
+	nav iframe{
+		display: none;
+	}
 	.page-log article.container{
 		width: 90%;
 		max-width: 90%;
