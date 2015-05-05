@@ -126,16 +126,16 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 
 
 
-.page-log .container:not(nav){
+.page-single .container:not(nav){
 	max-width: 640px;
 	font-size: 1.2em;
 	line-height: 1.8em;
 }
-.page-log article h1:first-child,
-.page-log article p.meta{
+.page-single article h1:first-child,
+.page-single article p.meta{
 	text-align: center;
 }
-.page-log article p.meta{
+.page-single article p.meta{
 	margin-bottom: 2em;
 	font-size: 90%;
 }
@@ -147,7 +147,7 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 	nav iframe{
 		display: none;
 	}
-	.page-log article.container{
+	.page-single article.container{
 		width: 90%;
 		max-width: 90%;
 	}

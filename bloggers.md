@@ -1,7 +1,6 @@
 ---
 layout: single
 title: 社区博客列表
-category: single
 ---
 
 在这里收集各位社区成员的博客，按博客名称`localeCompare()`排序。需要添加自己的请发 PR 或 提交 issue。
