@@ -13,7 +13,7 @@ author: mytharcher
 * 时间：2015 年 5 月 2 日 上午 8:00
 * 地点：前旺路 红庙寺花园 路边（具体看位置分享）
 
-![前旺路 红庙寺花园](/assets/img/2014-05-01-cycling-plan/assemble.jpg)
+![前旺路 红庙寺花园](/assets/img/content/2015-05-01-cycling-plan/assemble.jpg)
 
 分批集合的请早于时间点完成，保证 8:00 到集合地点，10 分钟之内准备就绪出发。
 
