@@ -17,3 +17,4 @@ title: 社区博客列表
 [Ghost]: https://ghost.org/
 [Hexo]: http://hexo.io/
 [Solo]: https://github.com/b3log/b3log-solo
+[Tumblr]: https://www.tumblr.com
