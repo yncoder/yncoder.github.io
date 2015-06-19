@@ -11,8 +11,10 @@ title: 社区博客列表
 * [BigZhu的窝](http://bigzhu.org/) (自建)
 * [Liao Yifan's Strive](http://saintdan.github.io/) ([Hexo][])
 * [Vanessa](http://vanessa.b3log.org/) ([Solo][])
+* [programming4fun](http://blog.programming4fun.com/) ([Tumblr][])
 
 [Jekyll]: http://jekyllrb.com/
 [Ghost]: https://ghost.org/
 [Hexo]: http://hexo.io/
 [Solo]: https://github.com/b3log/b3log-solo
+[Tumblr]: https://www.tumblr.com
