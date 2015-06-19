@@ -15,7 +15,7 @@ Yncoder 是云南开发者自发组织的交流社区，其目的是提供一个
 日常讨论
 ----------
 
-我们使用 Github [Issues](https://github.com/yncoder/yncoder.github.io/issues) 作为日常讨论和发帖交流的工具，各类需要讨论的话题都可以在其中发布，如技术交流，活动发起，组织发展等，我们也接受企业招聘，但需要遵守招聘帖原则部分。
+我们使用 Github [Issues](https://github.com/yncoder/yncoder.github.io/issues) 作为日常讨论和发帖交流的工具，各类需要讨论的话题都可以在其中发布，如技术交流，活动发起，组织发展等，我们也欢迎能为员工提供更好发展机会的企业来招聘，但需要遵守招聘帖原则部分。
 
 ### 招聘帖原则 ###
 
