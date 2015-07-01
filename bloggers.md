@@ -7,7 +7,7 @@ title: 社区博客列表
 
 * [闭门造轮子](http://yanjunyi.com/blog/) ([Jekyll][])
 * [简约设计の艺术](http://88250.b3log.org/) ([Solo][])
-* [一个博客](http://zhangrgk.ninja/) ([Ghost][])
+* [一个博客](http://blog.zhangrgk.ninja/) ([Jekyll][])
 * [BigZhu的窝](http://bigzhu.org/) (自建)
 * [Liao Yifan's Strive](http://saintdan.github.io/) ([Hexo][])
 * [Vanessa](http://vanessa.b3log.org/) ([Solo][])
