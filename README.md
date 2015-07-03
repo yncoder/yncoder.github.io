@@ -1,4 +1,9 @@
-Yncoder
+---
+layout: single
+permalink: /about/
+---
+
+关于 Yncoder
 ==========
 
 Yncoder 是云南开发者自发组织的交流社区，其目的是提供一个自由分享交流的平台，互助提高参与者的职业水平，创造共赢的机会，进而改善本地 IT 行业生态。目前主要由 @gc87，@mytharcher 和 @ZhangRGK 共同维护。

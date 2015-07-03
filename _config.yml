@@ -1,6 +1,4 @@
 markdown: kramdown
-permalink: /:categories/:title.html
-exclude: 
-  - README.md
+permalink: /:categories/:title
 
 host: yncoder.github.io
