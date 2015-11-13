@@ -12,9 +12,11 @@ title: 社区博客列表
 * [Liao Yifan's Strive](http://saintdan.github.io/) ([Hexo][])
 * [Vanessa](http://vanessa.b3log.org) ([Solo][])
 * [programming4fun](http://blog.programming4fun.com/) ([Tumblr][])
+* [gc87](http://my.oschina.net/gaoc87) ([oschina][])
 
 [Jekyll]: http://jekyllrb.com/
 [Ghost]: https://ghost.org/
 [Hexo]: http://hexo.io/
 [Solo]: https://github.com/b3log/solo
 [Tumblr]: https://www.tumblr.com
+[oschina]:http://www.oschina.net/
