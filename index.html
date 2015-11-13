@@ -129,5 +129,30 @@ footer .copyright{
 	<p class="copyright">&copy; Since 2014. 官方 QQ 群：39615502</p>
 </footer>
 
+<script>
+(function () {
+	var url = '//api.github.com/repos/yncoder/yncoder.github.io/issues';
+	var param = {
+		state: 'open'
+	};
+
+	var query = Object.keys(param).map(function (key) {
+		return key + '=' + encodeURIComponent(param[key]);
+	}).join('&');
+
+	var request = new XMLHttpRequest();
+	request.open('GET', url + (query ? '?' + query : ''), true);
+
+	request.onreadystatechange = function () {
+		if (this.readyState == 4 &&
+			this.status >= 200 && this.status < 300) {
+			console.log(this.responseText);
+		}
+	};
+
+	request.send(null);
+})();
+</script>
+
 </body>
 </html>
