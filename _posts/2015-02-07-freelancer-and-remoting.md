@@ -2,6 +2,7 @@
 category: interview
 layout: interview
 title: 自由职业者与远程工作那些事
+public: true
 status: done
 interviewee:
   - name: 严俊羿

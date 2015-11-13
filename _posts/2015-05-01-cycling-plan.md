@@ -3,6 +3,7 @@ layout: post
 category: log
 title: 五一环抚仙湖骑行计划
 author: mytharcher
+public: true
 ---
 
 发起人：mytharcher

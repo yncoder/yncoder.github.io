@@ -116,7 +116,9 @@ footer .copyright{
 	<ul>
 	{% assign list = site.posts | sort:"date" %}
 	{% for item in list %}
+		{% if item.public %}
 		<li class="status-{{ item.status }}"><a href="{{ item.url }}">{{ item.title }}</a></li>
+		{% endif %}
 	{% endfor %}
 	</ul>
 </main>
