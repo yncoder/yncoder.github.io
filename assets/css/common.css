@@ -192,12 +192,20 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 .page-list #issue-list h4 {
 	margin: 0;
 	line-height: 24px;
+	height: 24px;
 	font-size: 18px;
 	font-weight: bolder;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .page-list #issue-list p{
 	margin: 0;
 	line-height: 24px;
+	height: 25px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .page-list #issue-list p > * {
 	height: 16px;
