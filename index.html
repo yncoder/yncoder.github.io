@@ -36,7 +36,7 @@ type: list
 			if (this.status >= 200 && this.status < 300) {
 				callback(this.response);
 			} else if(this.status == 403) {
-				doucment.queryAllSelector('.page-list .container main').innerHTML = "<h1 class='alert-error'>别刷了，快去干活</h1>";
+				document.queryAllSelector('.page-list .container main').innerHTML = "<h1 class='alert-error'>别刷了，快去干活</h1>";
 			}
 		};
 
