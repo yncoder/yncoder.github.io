@@ -129,8 +129,8 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 
 @media (max-width: 640px) {
 	.container{
-		width: 90%;
-		max-width: 90%;
+		width: 96%;
+		max-width: 96%;
 	}
 }
 
@@ -261,14 +261,41 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 }
 
 @media (max-width: 640px) {
+	body>nav .container{
+		width: 100%;
+		max-width: 100%;
+	}
 	body>nav .logo *:not(img){
 		display: none;
 	}
-	body>nav iframe{
-		display: none;
+	body>nav li{
+		margin-left: 10px;
 	}
-	.page-single article.container{
-		width: 90%;
-		max-width: 90%;
+
+	.page-list aside{
+		margin-bottom: 2%;
+	}
+	.page-list aside nav .btn-add{
+		line-height: 32px;
+	}
+
+	.page-list main{
+		margin-top: 2%;
+	}
+	.page-list #label-list li{
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.page-list #label-list a{
+		padding: 5px;
+	}
+
+	.page-list #issue-list li{
+		min-height: 55px;
+		padding-left: 55px;
+	}
+	.page-list #issue-list figure{
+		width: 32px;
+		height: 32px;
 	}
 }
