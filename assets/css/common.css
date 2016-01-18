@@ -40,7 +40,7 @@ a:hover{
 .container{
 	position: relative;
 	width: 80%;
-	max-width: 1280px;
+	max-width: 980px;
 	margin: auto;
 }
 .container:after{
@@ -53,6 +53,9 @@ a:hover{
 
 nav{
 	height: 60px;
+	border-bottom: 1px solid #eee;
+	background-color: rgba(63, 147, 192, 1);
+	background: linear-gradient( 160deg, rgba(63, 147, 192, 1), rgba(63, 147, 192, 0.7));
 }
 nav .logo{
 	display: block;
@@ -60,12 +63,7 @@ nav .logo{
 	height: 60px;
 	text-decoration: none;
 	font: normal 2em/60px Consolas;
-	color: #000;
-}
-nav .logo img{
-	float: left;
-	height: 100%;
-	margin-right: .5em;
+	color: #fff;
 }
 nav ul{
 	position: absolute;
@@ -80,6 +78,19 @@ nav li{
 	line-height: 20px;
 	vertical-align: middle;
 	margin-left: 20px;
+}
+nav li a{
+	color: #fff;
+}
+
+footer{
+	padding: 20px 0;
+}
+footer .copyright{
+	line-height: 20px;
+	text-align: center;
+	color: #999;
+	font-size: 80%;
 }
 
 
@@ -138,6 +149,84 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 .page-single article p.meta{
 	margin-bottom: 2em;
 	font-size: 90%;
+}
+
+.page-list #issue-list li{
+	list-style: none;
+	position: relative;
+	height: 70px;
+	padding: 11px;
+	border-top: 1px solid #f3f3f3;
+}
+.page-list #issue-list li.label-活动 {
+	border-left: 3px solid #CE2C7C
+}
+.page-list #issue-list li.label-招聘 {
+	border-left: 3px solid #FCCB00
+}
+.page-list #issue-list li.label-技术 {
+	border-left: 3px solid #82B5ED
+}
+.page-list #issue-list li.label-求职 {
+	border-left: 3px solid #BEE6BE
+}
+.page-list #issue-list li.label-组织发展 {
+	border-left: 3px solid #000;
+}
+.page-list #issue-list figure{
+	width: 48px;
+	height: 48px;
+	display: inline-block;
+	border-radius: 50%;
+	position: absolute;
+	top: 11px;
+	left: 11px;
+	overflow: hidden;
+}
+.page-list #issue-list figure img{
+	max-width: 100%;
+}
+.page-list #issue-list .title {
+	padding-left: 70px;
+}
+.page-list #issue-list h4 {
+	margin: 0;
+	line-height: 24px;
+	font-size: 18px;
+	font-weight: bolder;
+}
+.page-list #issue-list p{
+	margin: 0;
+	line-height: 24px;
+}
+.page-list #issue-list p > * {
+	height: 16px;
+	background-color: #eee;
+	color: #999;
+	margin-right: .5em;
+	padding: 0 1em;
+	border-radius: 8px;
+	font-size: 13px;
+}
+
+aside {
+	height: 70px;
+	padding: 11px;
+	vertical-align: middle;
+}
+aside * {
+	color: #999;
+}
+aside span {
+	display: inline-block;
+	height: 48px;
+	width: 48px;
+	margin-right: 22px;
+	background-color: #eee;
+	font-size: 48px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 50%;
 }
 
 @media (max-width: 640px) {

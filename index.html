@@ -1,133 +1,99 @@
 ---
+layout: page
+type: list
 ---
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8" />
-<title>Yncoder</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<link rel="icon" href="/favicon.png" type="image/x-icon" />
-<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-<link rel="stylesheet" href="/assets/css/common.css" />
-<style type="text/css">
-.holder{
-	min-height: 100%;
-	margin-bottom: -60px;
-}
-.holder:after{
-	content: "";
-	display: block;
-	height: 60px;
-}
 
-nav .logo{
-	display: none;
-}
-
-header{
-	text-align: center;
-}
-header h1{
-	margin: 10px 0;
-	font: normal 250%/1 Consolas, Arial;
-}
-header hgroup{
-	margin: 50px 0;
-}
-header h2{
-	margin: 0;
-	font-size: 2em;
-	font-weight: normal;
-}
-header blockquote{
-	margin: 1.5em 0;
-	font-size: 110%;
-	line-height: 1.5em;
-}
-
-main{
-	text-align: center;
-}
-main ul{
-	margin: 1em 0;
-}
-main li{
-	list-style: none;
-	display: inline-block;
-	margin-right: 20px;
-	line-height: 1.5em;
-}
-main li.upcoming span{
-	margin-left: .5em;
-	color: #999;
-}
-
-footer{
-	height: 60px;
-	padding: 20px 0;
-}
-footer .copyright{
-	line-height: 20px;
-	text-align: center;
-	color: #999;
-	font-size: 80%;
-}
-
-@media (min-width: 1024px) {
-	header.container{
-		margin-top: 50px;
-	}
-}
-
-@media (max-width: 640px) {
-	header h1{
-		font-size: 2em;
-	}
-	header h2{
-		font-size: 1.2em;
-	}
-
-	footer p{
-		width: 100%;
-	}
-}
-</style>
-</head>
-
-<body>
-
-<div class="holder">
-
-{% include nav.html %}
-
-<header class="container">
-	<figure>
-		<img src="assets/img/logo-160.png" width="160" height="160" alt="&lt;yn/&gt;" />
-		<h1>Yncoder</h1>
-	</figure>
-	<hgroup>
-		<h2>分享 · 交流 · 共创</h2>
-		<blockquote>我们相信，每个开发者都是富有创造力的个体，即使在这块IT欠发达的土地上，我们也并不孤独。</blockquote>
-	</hgroup>
-</header>
-
-<main class="container">
-	<h3>社区活动</h3>
-	<ul>
-	{% assign list = site.posts | sort:"date" %}
-	{% for item in list %}
-		{% if item.public %}
-		<li class="status-{{ item.status }}"><a href="{{ item.url }}">{{ item.title }}</a></li>
-		{% endif %}
-	{% endfor %}
-	</ul>
-</main>
-
+<div class="container">
+	<aside>
+		<a href="https://github.com/yncoder/yncoder.github.io/issues/new" target="yncoder_new_issue">
+			<span>+</span>发布新消息
+		</a>
+	</aside>
+	<main>
+		<ul id="label-list"></ul>
+		<ul id="issue-list"></ul>
+	</main>
 </div>
 
-<footer class="container">
-	<p class="copyright">&copy; Since 2014. 官方 QQ 群：39615502</p>
-</footer>
+<script>
+(function () {
+	function ajax (url, options, callback) {
+		options = options || {};
 
-</body>
-</html>
+		var query = Object.keys(options.query || {}).map(function (key) {
+			return key + '=' + encodeURIComponent(options.query[key]);
+		}).join('&');
+
+		var request = new XMLHttpRequest();
+		request.responseType = options.responseType || 'json';
+		request.open(options.method || 'GET', url + (query ? '?' + query : ''), true);
+
+		request.onreadystatechange = function () {
+			if (this.readyState != 4) {
+				return;
+			}
+
+			if (this.status >= 200 && this.status < 300) {
+				callback(this.response);
+			} else if(this.status == 403) {
+				doucment.queryAllSelector('.page-list .container main').innerHTML = "<h1 class='alert-error'>别刷了，快去干活</h1>";
+			}
+		};
+
+		request.send(options.data || null);
+	}
+
+	function escapeHTML (str) {
+		return str.replace(/([&<>'"])/g, function (matcher, symbol) {
+			return '&#' + symbol.charCodeAt(0) + ';';
+		});
+	}
+
+	function format (template, data) {
+		return template.replace(/\{(\s*\w+\s*)\}/g, function (matcher, name) {
+			var value = data[name.trim()];
+			return typeof value != 'undefined' ? value : '';
+		});
+	}
+
+	ajax('//api.github.com/repos/yncoder/yncoder.github.io/issues', {
+		query: {
+			state: 'open'
+		}
+	}, function (data) {
+		var template = '<li class="{labelClasses} {statusClass}">' +
+			'<figure><img src="{authorAvatarUrl}" /></figure>' +
+			'<div class="title"><h4><a href="{link}">{title}</h4>' +
+			'<p>{labelElements} <a class="author" href="{authorLink}" target="_blank">{authorName}</a><i>{comments} 条评论</i></p></div>';
+
+		var labelTemplate = '<a href="{url}" class="label" style="backbround-color: #{color}">{name}</a>';
+
+		function renderLabelItem (label) {
+			return format(labelTemplate, label);
+		}
+
+		function renderLabelClass (label) {
+			return 'label-' + label.name;
+		}
+
+		var html = data.map(function (item) {
+			return format(template, {
+				labelClasses: item.labels.map(renderLabelClass).join(''),
+				labelElements: item.labels.map(renderLabelItem).join(''),
+				title: escapeHTML(item.title),
+				link: item.html_url,
+				authorAvatarUrl: item.user.avatar_url,
+				authorName: item.user.login,
+				authorLink: item.user.html_url,
+				comments: item.comments
+			});
+		}).join('');
+
+		document.getElementById('issue-list').innerHTML = html;
+	});
+
+	// ajax('//api.github.com/repos/yncoder/yncoder.github.io/labels', null, function (data) {
+
+	// });
+})();
+</script>
