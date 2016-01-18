@@ -40,7 +40,7 @@ a:hover{
 .container{
 	position: relative;
 	width: 80%;
-	max-width: 1280px;
+	max-width: 980px;
 	margin: auto;
 }
 .container:after{
@@ -80,6 +80,16 @@ nav li{
 	line-height: 20px;
 	vertical-align: middle;
 	margin-left: 20px;
+}
+
+footer{
+	padding: 20px 0;
+}
+footer .copyright{
+	line-height: 20px;
+	text-align: center;
+	color: #999;
+	font-size: 80%;
 }
 
 
@@ -138,6 +148,37 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 .page-single article p.meta{
 	margin-bottom: 2em;
 	font-size: 90%;
+}
+
+.page-list #issue-list li{
+	list-style: none;
+	position: relative;
+	padding: 10px 10px 10px 70px;
+}
+.page-list #issue-list figure{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 48px;
+	height: 48px;
+}
+.page-list #issue-list figure img{
+	max-width: 100%;
+}
+.page-list #issue-list h4,
+.page-list #issue-list p{
+	margin: 0;
+	line-height: 24px;
+	font-size: 100%;
+}
+.page-list #issue-list li>i{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: #d7d7d7;
+	padding: 5px;
+	border-radius: 5px;
+	color: #fff;
 }
 
 @media (max-width: 640px) {
