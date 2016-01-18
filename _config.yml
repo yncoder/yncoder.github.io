@@ -1,4 +1,4 @@
 markdown: kramdown
 permalink: /:categories/:title
 
-host: localhost
+host: yncoder.github.io

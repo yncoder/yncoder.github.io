@@ -151,11 +151,11 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 	font-size: 90%;
 }
 
+
 .page-list #issue-list li{
 	list-style: none;
 	position: relative;
-	height: 70px;
-	padding: 11px;
+	padding: 10px;
 	border-top: 1px solid #f3f3f3;
 }
 .page-list #issue-list li.label-活动 {
@@ -179,8 +179,8 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 	display: inline-block;
 	border-radius: 50%;
 	position: absolute;
-	top: 11px;
-	left: 11px;
+	top: 10px;
+	left: 10px;
 	overflow: hidden;
 }
 .page-list #issue-list figure img{
@@ -191,13 +191,12 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 }
 .page-list #issue-list h4 {
 	margin: 0;
-	line-height: 24px;
-	font-size: 18px;
-	font-weight: bolder;
+	line-height: 1.5em;
+	font-size: 110%;
 }
 .page-list #issue-list p{
 	margin: 0;
-	line-height: 24px;
+	line-height: 1.5em;
 }
 .page-list #issue-list p > * {
 	height: 16px;
@@ -209,15 +208,10 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 	font-size: 13px;
 }
 
-aside {
-	height: 70px;
-	padding: 11px;
-	vertical-align: middle;
+.page-list aside {
+	padding: 10px;
 }
-aside * {
-	color: #999;
-}
-aside span {
+.page-list aside .btn-add {
 	display: inline-block;
 	height: 48px;
 	width: 48px;
@@ -227,6 +221,7 @@ aside span {
 	text-align: center;
 	vertical-align: middle;
 	border-radius: 50%;
+	color: #999
 }
 
 @media (max-width: 640px) {
