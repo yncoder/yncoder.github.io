@@ -4,13 +4,15 @@ type: list
 ---
 
 <div class="container">
+	<aside>
+		<a href="https://github.com/yncoder/yncoder.github.io/issues/new" target="yncoder_new_issue">
+			<span>+</span>发布新消息
+		</a>
+	</aside>
 	<main>
 		<ul id="label-list"></ul>
 		<ul id="issue-list"></ul>
 	</main>
-	<aside>
-
-	</aside>
 </div>
 
 <script>
@@ -33,6 +35,8 @@ type: list
 
 			if (this.status >= 200 && this.status < 300) {
 				callback(this.response);
+			} else if(this.status == 403) {
+				doucment.queryAllSelector('.page-list .container main').innerHTML = "<h1 class='alert-error'>别刷了，快去干活</h1>";
 			}
 		};
 
@@ -59,9 +63,8 @@ type: list
 	}, function (data) {
 		var template = '<li class="{labelClasses} {statusClass}">' +
 			'<figure><img src="{authorAvatarUrl}" /></figure>' +
-			'<h4><a href="{link}">{title}</h4>' +
-			'<p>{labelElements} <a href="{authorLink}" target="_blank">{authorName}</a></p>' +
-			'<i>{comments}</i>';
+			'<div class="title"><h4><a href="{link}">{title}</h4>' +
+			'<p>{labelElements} <a class="author" href="{authorLink}" target="_blank">{authorName}</a><i>{comments} 条评论</i></p></div>';
 
 		var labelTemplate = '<a href="{url}" class="label" style="backbround-color: #{color}">{name}</a>';
 
@@ -89,8 +92,8 @@ type: list
 		document.getElementById('issue-list').innerHTML = html;
 	});
 
-	ajax('//api.github.com/repos/yncoder/yncoder.github.io/labels', null, function (data) {
+	// ajax('//api.github.com/repos/yncoder/yncoder.github.io/labels', null, function (data) {
 
-	});
+	// });
 })();
 </script>
