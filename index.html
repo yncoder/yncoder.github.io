@@ -1,26 +1,62 @@
 ---
 layout: page
 type: list
+github: https://github.com/yncoder/yncoder.github.io
 ---
 
-<div class="container">
-	<aside>
-		<a href="https://github.com/yncoder/yncoder.github.io/issues/new" target="_blank" class="btn-add"><span>+</span>发布新消息</a>
-	</aside>
-	<main>
-		<ul id="label-list"></ul>
-		<ul id="issue-list"></ul>
-	</main>
-</div>
+<main>
+	<div class="container">
+		<aside>
+			<nav class="block">
+				<a href="{{page.github}}/issues/new" target="_blank" class="btn-add"><i class="fa fa-plus"></i>发布主题</a>
+				<ul id="label-list">
+					<li class="loading"><i class="fa fa-circle-o-notch fa-spin"></i></li>
+				</ul>
+			</nav>
+		</aside>
+		<ul id="issue-list">
+			<li class="loading"><i class="fa fa-circle-o-notch fa-spin"></i></li>
+		</ul>
+	</div>
+</main>
 
 <script>
 (function () {
-	function ajax (url, options, callback) {
+	var store = {
+		isSupport: (function () {
+			try {
+				return 'localStorage' in window && window['localStorage'] !== null;
+			} catch (ex) {
+				return false;
+			}
+		})(),
+		set: function (name, value) {
+			if (this.isSupport) {
+				localStorage.setItem(name, JSON.stringify(value));
+			}
+		},
+		get: function (name) {
+			return this.isSupport ? JSON.parse(localStorage.getItem(name)) : null;
+		}
+	};
+
+	function ajax (url, options) {
 		options = options || {};
 
 		var query = Object.keys(options.query || {}).map(function (key) {
 			return key + '=' + encodeURIComponent(options.query[key]);
 		}).join('&');
+
+		var hash = url + '?' + query + '#' + JSON.stringify(options.data || {});
+
+		if (options.cache) {
+
+			var storage = store.get(hash);
+
+			if (storage && Date.now() - storage.timestamp <= options.cache) {
+				return options.ondata(storage.data);
+			}
+		}
 
 		var request = new XMLHttpRequest();
 		request.responseType = options.responseType || 'json';
@@ -32,9 +68,12 @@ type: list
 			}
 
 			if (this.status >= 200 && this.status < 300) {
-				callback(this.response);
+				if (options.cache) {
+					store.set(hash, {data: this.response, timestamp: Date.now()});
+				}
+				options.ondata && options.ondata(this.response);
 			} else if(this.status == 403) {
-				document.queryAllSelector('.page-list .container main').innerHTML = "<h1 class='alert-error'>别刷了，快去干活</h1>";
+				options.onforbidden && options.onforbidden(this.response);
 			}
 		};
 
@@ -54,44 +93,112 @@ type: list
 		});
 	}
 
-	ajax('//api.github.com/repos/yncoder/yncoder.github.io/issues', {
-		query: {
-			state: 'open'
-		}
-	}, function (data) {
-		var template = '<li class="{labelClasses} {statusClass}">' +
+	function gotowork () {
+		document.getElementById('issue-list').innerHTML = '<li class="gotowork"><h1>别刷了，快去干活</h1></li>';
+	}
+
+	var issueList = {
+		template: '<li class="{labelClasses} {statusClass}" style="border-left-color:{firstLabelColor}">' +
 			'<figure><img src="{authorAvatarUrl}" /></figure>' +
-			'<div class="title"><h4><a href="{link}">{title}</h4>' +
-			'<p>{labelElements} <a class="author" href="{authorLink}" target="_blank">{authorName}</a><i>{comments} 条评论</i></p></div>';
+			'<h4><a href="{link}">{title}</h4>' +
+			'<p>{labelElements} <a class="author" href="{authorLink}" target="_blank">{authorName}</a><i>{comments} 条评论</i></p>',
 
-		var labelTemplate = '<a href="{url}" class="label" style="backbround-color: #{color}">{name}</a>';
+		labelTemplate: '<a href="{url}" class="label" style="backbround-color: #{color}">{name}</a>',
 
-		function renderLabelItem (label) {
-			return format(labelTemplate, label);
-		}
+		renderLabelItem: function (label) {
+			return format(this.labelTemplate, label);
+		},
 
-		function renderLabelClass (label) {
+		renderLabelClass: function (label) {
 			return 'label-' + label.name;
-		}
+		},
 
-		var html = data.map(function (item) {
-			return format(template, {
-				labelClasses: item.labels.map(renderLabelClass).join(''),
-				labelElements: item.labels.map(renderLabelItem).join(''),
-				title: escapeHTML(item.title),
-				link: item.html_url,
-				authorAvatarUrl: item.user.avatar_url,
-				authorName: item.user.login,
-				authorLink: item.user.html_url,
-				comments: item.comments
+		render: function (data) {
+			var html = data.map(function (item) {
+				return format(this.template, {
+					firstLabelColor: item.labels.length ? '#' + item.labels[0].color : 'transparent',
+					labelClasses: item.labels.map(this.renderLabelClass, this).join(''),
+					labelElements: item.labels.map(this.renderLabelItem, this).join(''),
+					title: escapeHTML(item.title),
+					link: item.html_url,
+					authorAvatarUrl: item.user.avatar_url,
+					authorName: item.user.login,
+					authorLink: item.user.html_url,
+					comments: item.comments
+				});
+			}, this).join('');
+
+			document.getElementById('issue-list').innerHTML = html;
+		},
+
+		load: function () {
+			ajax('//api.github.com/repos/yncoder/yncoder.github.io/issues', {
+				query: {
+					state: 'open'
+				},
+				cache: 60000,
+				ondata: this.render.bind(this),
+				onforbidden: gotowork
 			});
-		}).join('');
+		}
+	};
 
-		document.getElementById('issue-list').innerHTML = html;
-	});
+	var labelList = {
+		template: '<li><a href="#label-{name}" style="background-color:#{color}" data-color="#{color}"><i class="fa fa-tag"></i>{name}</a></li>',
 
-	// ajax('//api.github.com/repos/yncoder/yncoder.github.io/labels', null, function (data) {
+		render: function (data) {
+			data.sort(function (a, b) {
+				return a.name.localeCompare(b.name);
+			});
+			var html = data.map(function (item) {
+				return format(this.template, item);
+			}, this).join('');
 
-	// });
+			document.getElementById('label-list').innerHTML = html;
+			document.getElementById('label-list').onclick = this.clickHandler;
+		},
+
+		clickHandler: function (ev) {
+			var target = ev.target || ev.srcElement;
+			if (target.nodeName == 'A') {
+				ev.preventDefault();
+
+				var list = target.parentNode.parentNode;
+				var items = list.querySelectorAll('a');
+
+				target.classList.toggle('showing');
+				var showings = list.querySelectorAll('a.showing').length;
+
+				for (var i = 0, len = items.length; i < len; i++) {
+					var item = items[i];
+
+					var className = item.href.replace(/.*#([\w\-]+)/, '$1');
+
+					var flag = item.classList.contains('showing') || !showings;
+
+					item.style.backgroundColor = flag ? item.getAttribute('data-color') : '#ccc';
+
+					[].slice.call(document.querySelectorAll('#issue-list li.' + className)).forEach(function (li) {
+						li.classList.toggle('hidden', !flag);
+					})
+					
+				}
+
+				
+				return false;
+			}
+		},
+
+		load: function () {
+			ajax('//api.github.com/repos/yncoder/yncoder.github.io/labels', {
+				cache: 3600000,
+				ondata: this.render.bind(this),
+				onforbidden: gotowork
+			});
+		}
+	};
+
+	issueList.load();
+	labelList.load();
 })();
 </script>

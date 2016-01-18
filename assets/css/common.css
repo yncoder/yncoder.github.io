@@ -30,7 +30,7 @@ img{
 }
 
 a{
-	color: #0395d0;
+	color: #000;
 	text-decoration: none;
 }
 a:hover{
@@ -51,27 +51,30 @@ a:hover{
 
 
 
-nav{
+body>nav{
 	height: 60px;
-	border-bottom: 1px solid #eee;
-	background-color: rgba(63, 147, 192, 1);
-	background: linear-gradient( 160deg, rgba(63, 147, 192, 1), rgba(63, 147, 192, 0.7));
+	background: #fff;
 }
-nav .logo{
+body>nav .logo{
 	display: block;
 	float: left;
 	height: 60px;
 	text-decoration: none;
 	font: normal 2em/60px Consolas;
-	color: #fff;
+	color: #000;
 }
-nav ul{
+body>nav .logo img{		
+	float: left;		
+	height: 100%;		
+	margin-right: .5em;		
+}
+body>nav ul{
 	position: absolute;
 	top: 0;
 	right: 0;
 	padding: 20px 0;
 }
-nav li{
+body>nav li{
 	list-style: none;
 	display: inline-block;
 	height: 20px;
@@ -79,16 +82,12 @@ nav li{
 	vertical-align: middle;
 	margin-left: 20px;
 }
-nav li a{
-	color: #fff;
-}
 
 footer{
 	padding: 20px 0;
 }
 footer .copyright{
 	line-height: 20px;
-	text-align: center;
 	color: #999;
 	font-size: 80%;
 }
@@ -137,7 +136,7 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 
 
 
-.page-single .container:not(nav){
+.page-single .container:not(body>nav){
 	max-width: 640px;
 	font-size: 1.2em;
 	line-height: 1.8em;
@@ -151,48 +150,91 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 	font-size: 90%;
 }
 
+.page-list{
+	background: #f0f0f0;
+}
+.page-list main{
+	margin-top: 20px;
+}
+.page-list aside .block{
+	padding: 10px;
+	background: #fff;
+}
+.page-list aside nav .btn-add{
+	display: block;
+	border: 1px solid #999;
+	border-radius: 4px;
+	vertical-align: middle;
+	line-height: 48px;
+	font-size: 1.2em;
+	text-align: center;
+}
+.page-list aside nav .btn-add i{
+	margin-right: .5em;
+}
+.page-list aside nav .btn-add:hover{
+	text-decoration: none;
+	color: #000;
+}
+.page-list aside nav .btn-add:hover i{
+	font-size: 1.2em;
+}
 
+.page-list #label-list li{
+	list-style: none;
+	margin-top: 10px;
+}
+.page-list #label-list a{
+	display: block;
+	border-radius: 4px;
+	padding: 10px;
+	color: #fff;
+}
+.page-list #label-list .fa-tag{
+	margin-right: .5em;
+}
+
+.page-list #issue-list{
+	background: #fff;
+}
 .page-list #issue-list li{
 	list-style: none;
 	position: relative;
-	padding: 10px;
-	border-top: 1px solid #f3f3f3;
+	min-height: 70px;
+	padding: 10px 10px 10px 70px;
+	border-bottom: 1px solid #eee;
+	border-left: 2px solid transparent;
 }
-.page-list #issue-list li.label-活动 {
-	border-left: 3px solid #CE2C7C
+.page-list #issue-list li.loading,
+.page-list #issue-list li.gotowork{
+	padding: 50px 10px;
+	text-align: center;
+	font-size: 200%;
 }
-.page-list #issue-list li.label-招聘 {
-	border-left: 3px solid #FCCB00
-}
-.page-list #issue-list li.label-技术 {
-	border-left: 3px solid #82B5ED
-}
-.page-list #issue-list li.label-求职 {
-	border-left: 3px solid #BEE6BE
-}
-.page-list #issue-list li.label-组织发展 {
-	border-left: 3px solid #000;
+.page-list #issue-list li.hidden{
+	display: none;
 }
 .page-list #issue-list figure{
-	width: 48px;
-	height: 48px;
-	display: inline-block;
-	border-radius: 50%;
 	position: absolute;
 	top: 10px;
 	left: 10px;
-	overflow: hidden;
+	width: 48px;
+	height: 48px;
 }
 .page-list #issue-list figure img{
 	max-width: 100%;
+	border-radius: 4px;
 }
-.page-list #issue-list .title {
-	padding-left: 70px;
-}
-.page-list #issue-list h4 {
+.page-list #issue-list h4{
 	margin: 0;
 	line-height: 1.5em;
 	font-size: 110%;
+}
+.page-list #issue-list h4 a{
+	color: #666;
+}
+.page-list #issue-list h4 a:visited{
+	color: #999;
 }
 .page-list #issue-list p{
 	margin: 0;
@@ -208,27 +250,21 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 	font-size: 13px;
 }
 
-.page-list aside {
-	padding: 10px;
-}
-.page-list aside .btn-add {
-	display: inline-block;
-	height: 48px;
-	width: 48px;
-	margin-right: 22px;
-	background-color: #eee;
-	font-size: 48px;
-	text-align: center;
-	vertical-align: middle;
-	border-radius: 50%;
-	color: #999
+@media (min-width: 1024px) {
+	.page-list #issue-list{
+		width: 74%;
+	}
+	.page-list aside{
+		float: right;
+		width: 24%;
+	}
 }
 
 @media (max-width: 640px) {
-	nav .logo *:not(img){
+	body>nav .logo *:not(img){
 		display: none;
 	}
-	nav iframe{
+	body>nav iframe{
 		display: none;
 	}
 	.page-single article.container{
