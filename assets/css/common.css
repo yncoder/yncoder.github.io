@@ -60,18 +60,20 @@ body>nav{
 body>nav .logo{
 	display: block;
 	float: left;
-	padding: 7px;
+	padding: 6px;
 	text-decoration: none;
 	color: #FFF;
 	line-height: 1.5;
 }
 body>nav .logo strong{
-	font-size: 1.2em;
-	font-family: Consolas;
+	font-size: 1.3em;
+	font-family: Consolas, monaco, monospace;;
 }
 body>nav .logo .slogan{
 	display: block;
 	font-size: 1em;
+	transform: scale(0.83);
+	transform-origin: left;
 }
 body>nav ul{
 	position: absolute;
@@ -89,6 +91,7 @@ body>nav li{
 }
 body>nav li a{
 	color: #FFF;
+	font-size: 12px;
 }
 
 footer{
@@ -272,8 +275,11 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 		width: 100%;
 		max-width: 100%;
 	}
-	body>nav .logo *:not(img){
-		display: none;
+	body>nav .logo strong{
+		line-height: 48px;
+	}
+	body>nav .logo .slogan{
+		display: none
 	}
 	body>nav li{
 		margin-left: 10px;
