@@ -17,7 +17,9 @@ html,body{
 body{
 	color: #333;
 	font-size: 14px;
-	font-family: "Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
+	font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
 	background: #FFF url('../img/bg.png') no-repeat;
 }
 
