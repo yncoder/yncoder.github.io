@@ -18,6 +18,7 @@ body{
 	color: #333;
 	font-size: 14px;
 	font-family: "Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
+	background: #FFF url('../img/bg.png') no-repeat;
 }
 
 ul,ol,figure,form,dl,dt,dd{
@@ -53,20 +54,22 @@ a:hover{
 
 body>nav{
 	height: 60px;
-	background: #fff;
 }
 body>nav .logo{
 	display: block;
 	float: left;
-	height: 60px;
+	padding: 7px;
 	text-decoration: none;
-	font: normal 2em/60px Consolas;
-	color: #000;
+	color: #FFF;
+	line-height: 1.5;
 }
-body>nav .logo img{		
-	float: left;		
-	height: 100%;		
-	margin-right: .5em;		
+body>nav .logo strong{
+	font-size: 1.2em;
+	font-family: Consolas;
+}
+body>nav .logo .slogan{
+	display: block;
+	font-size: 1em;
 }
 body>nav ul{
 	position: absolute;
@@ -81,6 +84,9 @@ body>nav li{
 	line-height: 20px;
 	vertical-align: middle;
 	margin-left: 20px;
+}
+body>nav li a{
+	color: #FFF;
 }
 
 footer{
@@ -151,7 +157,6 @@ article blockquote{line-height:1.6em; margin:1em 0 1em 1.5em; border-left:2px so
 }
 
 .page-list{
-	background: #f0f0f0;
 }
 .page-list main{
 	margin-top: 20px;
