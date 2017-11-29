@@ -9,6 +9,7 @@ title: 社区博客列表
 * [丁亮的个人博客](http://88250.b3log.org/) ([Solo][])
 * [一个博客](http://blog.zhangrgk.ninja/) ([Jekyll][])
 * [BigZhu的窝](http://bigzhu.org/) (自建)
+* [回家看动画](http://blog.ttop5.net) ([GithubIssues][])
 * [Liao Yifan's Strive](http://saintdan.github.io/) ([Hexo][])
 * [Vanessa](http://vanessa.b3log.org) ([Solo][])
 * [programming4fun](http://blog.programming4fun.com/) ([Tumblr][])
@@ -16,6 +17,7 @@ title: 社区博客列表
 
 [Jekyll]: http://jekyllrb.com/
 [Ghost]: https://ghost.org/
+[GithubIssues]: https://github.com/ttop5/ttop5.github.io/issues
 [Hexo]: http://hexo.io/
 [Solo]: https://github.com/b3log/solo
 [Tumblr]: https://www.tumblr.com
