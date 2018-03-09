@@ -172,7 +172,7 @@ github: https://github.com/yncoder/yncoder.github.io
 				for (var i = 0, len = items.length; i < len; i++) {
 					var item = items[i];
 
-					var className = item.href.replace(/.*#([\w\-]+)/, '$1');
+					var className = decodeURIComponent(item.href.replace(/.*#([\w\-]+)/, '$1'));
 
 					var flag = item.classList.contains('showing') || !showings;
 
