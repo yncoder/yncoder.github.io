@@ -117,7 +117,7 @@ github: https://github.com/yncoder/yncoder.github.io
 			var html = data.map(function (item) {
 				return format(this.template, {
 					firstLabelColor: item.labels.length ? '#' + item.labels[0].color : 'transparent',
-					labelClasses: item.labels.map(this.renderLabelClass, this).join(''),
+					labelClasses: item.labels.map(this.renderLabelClass, this).join(' '),
 					labelElements: item.labels.map(this.renderLabelItem, this).join(''),
 					title: escapeHTML(item.title),
 					link: item.html_url,
@@ -172,7 +172,7 @@ github: https://github.com/yncoder/yncoder.github.io
 				for (var i = 0, len = items.length; i < len; i++) {
 					var item = items[i];
 
-					var className = item.href.replace(/.*#([\w\-]+)/, '$1');
+					var className = decodeURIComponent(item.href.replace(/.*#([\w\-]+)/, '$1'));
 
 					var flag = item.classList.contains('showing') || !showings;
 
