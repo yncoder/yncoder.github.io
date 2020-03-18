@@ -7,13 +7,14 @@ title: 社区博客列表
 
 * [闭门造轮子](http://yanjunyi.com/blog/) ([Jekyll][])
 * [丁亮的个人博客](http://88250.b3log.org) ([Solo][])
+* [回家看动画](http://blog.ttop5.net) ([GithubIssues][])
 * [一个博客](http://blog.zhangrgk.ninja/) ([Jekyll][])
 * [BigZhu的窝](http://bigzhu.org/) (自建)
-* [回家看动画](http://blog.ttop5.net) ([GithubIssues][])
-* [Liao Yifan's Strive](http://saintdan.github.io/) ([Hexo][])
-* [Vanessa](http://vanessa.b3log.org) ([Pipe][])
-* [programming4fun](http://blog.programming4fun.com/) ([Tumblr][])
 * [gc87](http://my.oschina.net/gaoc87) ([oschina][])
+* [Liao Yifan's Strive](http://saintdan.github.io/) ([Hexo][])
+* [nanmu42](https://nanmu.me/) ([Hugo][])
+* [programming4fun](http://blog.programming4fun.com/) ([Tumblr][])
+* [Vanessa](http://vanessa.b3log.org) ([Pipe][])
 
 [Jekyll]: http://jekyllrb.com/
 [Ghost]: https://ghost.org/
@@ -23,3 +24,4 @@ title: 社区博客列表
 [Tumblr]: https://www.tumblr.com
 [oschina]:http://www.oschina.net/
 [Pipe]: https://github.com/b3log/pipe
+[Hugo]: https://gohugo.io/
